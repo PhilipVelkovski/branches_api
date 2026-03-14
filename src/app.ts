@@ -6,7 +6,7 @@ import errorHandler from "./middleware/ErrorHandler";
 const app = express();
 
 app.use(express.json());
-app.use(morgan("combined")); // request logger
+app.use(morgan("combined"));
 
 app.use("/api/branches", branchRoutes);
 

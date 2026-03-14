@@ -1,5 +1,5 @@
-import branches from '../data/branches.json';
-import { Branch } from '../models/Branch';
+import branches from '@/data/branches.json';
+import { Branch } from '@/models/Branch';
 
 export const fetchAllBranches = (): Branch[] => {
   return branches;
