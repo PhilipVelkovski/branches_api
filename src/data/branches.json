@@ -5,7 +5,7 @@
     "address": "123 Main Street",
     "city": "Skopje",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 41.9981, "lon": 21.4254 }
+    "coordinates": { "lat": 41.9981, "lng": 21.4254 }
   },
   {
     "id": "2",
@@ -13,7 +13,7 @@
     "address": "456 North Street",
     "city": "Skopje",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 41.9995, "lon": 21.4300 }
+    "coordinates": { "lat": 41.9995, "lng": 21.4300 }
   },
   {
     "id": "3",
@@ -21,7 +21,7 @@
     "address": "789 East Avenue",
     "city": "Skopje",
     "workingHours": "Mon-Fri 08:00-16:00",
-    "coordinates": { "lat": 41.9970, "lon": 21.4400 }
+    "coordinates": { "lat": 41.9970, "lng": 21.4400 }
   },
   {
     "id": "4",
@@ -29,7 +29,7 @@
     "address": "101 West Boulevard",
     "city": "Skopje",
     "workingHours": "Mon-Fri 09:00-17:30",
-    "coordinates": { "lat": 41.9950, "lon": 21.4200 }
+    "coordinates": { "lat": 41.9950, "lng": 21.4200 }
   },
   {
     "id": "5",
@@ -37,7 +37,7 @@
     "address": "22 Macedonia Street",
     "city": "Bitola",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 41.0340, "lon": 21.3340 }
+    "coordinates": { "lat": 41.0340, "lng": 21.3340 }
   },
   {
     "id": "6",
@@ -45,7 +45,7 @@
     "address": "45 Lakeside Road",
     "city": "Ohrid",
     "workingHours": "Mon-Fri 08:30-16:30",
-    "coordinates": { "lat": 41.1167, "lon": 20.8000 }
+    "coordinates": { "lat": 41.1167, "lng": 20.8000 }
   },
   {
     "id": "7",
@@ -53,7 +53,7 @@
     "address": "10 Balkan Street",
     "city": "Tetovo",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 42.0076, "lon": 20.9711 }
+    "coordinates": { "lat": 42.0076, "lng": 20.9711 }
   },
   {
     "id": "8",
@@ -61,7 +61,7 @@
     "address": "5 Republic Square",
     "city": "Prishtina",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 42.6673, "lon": 21.1662 }
+    "coordinates": { "lat": 42.6673, "lng": 21.1662 }
   },
   {
     "id": "9",
@@ -69,7 +69,7 @@
     "address": "12 Skanderbeg Street",
     "city": "Tirana",
     "workingHours": "Mon-Fri 08:30-16:30",
-    "coordinates": { "lat": 41.3275, "lon": 19.8189 }
+    "coordinates": { "lat": 41.3275, "lng": 19.8189 }
   },
   {
     "id": "10",
@@ -77,7 +77,7 @@
     "address": "77 Knez Mihailova",
     "city": "Belgrade",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 44.8176, "lon": 20.4569 }
+    "coordinates": { "lat": 44.8176, "lng": 20.4569 }
   },
   {
     "id": "11",
@@ -85,7 +85,7 @@
     "address": "30 Baščaršija Street",
     "city": "Sarajevo",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 43.8563, "lon": 18.4131 }
+    "coordinates": { "lat": 43.8563, "lng": 18.4131 }
   },
   {
     "id": "12",
@@ -93,7 +93,7 @@
     "address": "14 Trg Kralja Milana",
     "city": "Nis",
     "workingHours": "Mon-Fri 08:00-16:00",
-    "coordinates": { "lat": 43.3190, "lon": 21.8961 }
+    "coordinates": { "lat": 43.3190, "lng": 21.8961 }
   },
   {
     "id": "13",
@@ -101,7 +101,7 @@
     "address": "200 Karposh Blvd",
     "city": "Skopje",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 41.9900, "lon": 21.4300 }
+    "coordinates": { "lat": 41.9900, "lng": 21.4300 }
   },
   {
     "id": "14",
@@ -109,7 +109,7 @@
     "address": "33 Goce Delcev Street",
     "city": "Kumanovo",
     "workingHours": "Mon-Fri 09:00-17:00",
-    "coordinates": { "lat": 42.1333, "lon": 21.7167 }
+    "coordinates": { "lat": 42.1333, "lng": 21.7167 }
   },
   {
     "id": "15",
@@ -117,6 +117,6 @@
     "address": "55 Macedonia Blvd",
     "city": "Veles",
     "workingHours": "Mon-Fri 08:30-16:30",
-    "coordinates": { "lat": 41.7167, "lon": 21.7833 }
+    "coordinates": { "lat": 41.7167, "lng": 21.7833 }
   }
 ]
