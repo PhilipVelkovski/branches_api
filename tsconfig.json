@@ -2,9 +2,14 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "commonjs",
+    "removeComments": true,
     "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true
