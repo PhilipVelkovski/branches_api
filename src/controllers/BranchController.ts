@@ -1,66 +1,78 @@
+/**
+ * Controller for handling Branch-related HTTP requests.
+ * Provides endpoints to fetch all branches with optional filtering and pagination.
+ */
+
 import { Request, Response } from 'express';
-import { ApiResponse } from '@/types/ApiResponse';
-import { Branch } from '@/models/Branch';
-import { fetchAllBranches, fetchBranchById } from '@/services/branchService';
-import { z } from 'zod';
+import { ApiResponse } from '@/dto/ApiResponseDTO';
+import { BranchDTO } from '@/dto/BranchDTO';
+import { BranchService } from '@/services/BranchService';
 
-const branchIdSchema = z.object({
-  id: z.string().regex(/^\d+$/, 'Branch ID must be numeric'),
-});
+export class BranchController {
+  constructor(private service: BranchService) {}
 
-export const getAllBranches = (req: Request, res: Response): Response => {
-  const { city, page = '1', limit = '10' } = req.query;
+  /**
+   * GET /branches
+   *
+   * Fetch all branches with optional filtering by city and pagination.
+   *
+   * @param req - Express request object, expected to have validated query parameters.
+   * @param res - Express Response Object.
+   *
+   * @returns JSON response with {@link BranchDTO} array type:
+   *   - success: true, data: BranchDTO[] for the requested page and filter, HTTP 200
+   *   - success: false, error message if something went wrong
+   *   - includes pagination info: page, limit, total
+   */
+  async getBranches(req: Request, res: Response) {
+    const { city, page, limit } = req.validatedQuery!;
 
-  let branches = fetchAllBranches();
+    const branches = await this.service.fetchAllBranches(city, page, limit);
 
-  // filtering
-  if (city && typeof city === 'string') {
-    branches = branches.filter((branch) => branch.city.toLowerCase() === city.toLowerCase());
-  }
-
-  // pagination
-  const pageNumber = parseInt(page as string);
-  const limitNumber = parseInt(limit as string);
-
-  const start = (pageNumber - 1) * limitNumber;
-  const end = start + limitNumber;
-
-  const paginatedBranches = branches.slice(start, end);
-
-  const response: ApiResponse<Branch[]> = {
-    success: true,
-    data: paginatedBranches,
-  };
-
-  return res.json(response);
-};
-export const getBranchById = (req: Request, res: Response): Response => {
-  const validation = branchIdSchema.safeParse(req.params);
-
-  if (!validation.success) {
-    const response: ApiResponse<null> = {
-      success: false,
-      error: validation.error.issues[0].message,
+    const response: ApiResponse<BranchDTO[]> = {
+      success: true,
+      data: branches.data,
+      page,
+      limit,
+      total: branches.total,
     };
 
-    return res.status(400).json(response);
+    res.json(response);
   }
 
-  const branch = fetchBranchById(req.params.id.toString());
+  /**
+   * GET /branches/:id
+   *
+   * Fetch a single branch by its numeric ID.
+   *
+   * Expects the request to have validated parameters via middleware.
+   *
+   * @param req - Express request object, expected to have `validatedParams`.
+   * @param res - Express Response Object.
+   *
+   * @returns JSON response with either:
+   *   - success: true, data: {@link BranchDTO} for the found branch, HTTP 200
+   *   - success: false, error message, HTTP 404 if branch not found
+   */
+  async getBranchById(req: Request, res: Response) {
+    const { id } = req.validatedParams!;
 
-  if (!branch) {
-    const response: ApiResponse<null> = {
-      success: false,
-      error: 'Branch not found',
+    const branch = await this.service.fetchBranchById(id);
+
+    if (!branch) {
+      return res.status(404).json({
+        success: false,
+        error: 'Branch not found',
+        page: 1,
+        limit: 1,
+      });
+    }
+
+    const response: ApiResponse<BranchDTO> = {
+      success: true,
+      data: branch,
     };
 
-    return res.status(404).json(response);
+    res.json(response);
   }
-
-  const response: ApiResponse<Branch> = {
-    success: true,
-    data: branch,
-  };
-
-  return res.json(response);
-};
+}
