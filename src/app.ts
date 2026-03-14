@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
-import branchRoutes from "./routes/branchRoutes";
-import errorHandler from "./middleware/ErrorHandler";
+import branchRoutes from "@/routes/branchRoutes";
+import errorHandler from "@/middleware/ErrorHandler";
 
 const app = express();
 
