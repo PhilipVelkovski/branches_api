@@ -1,12 +1,20 @@
 import { Router } from 'express';
-import { getAllBranches, getBranchById } from '@/controllers/BranchController';
+import { BranchController } from '@/controllers/BranchController';
+import { BranchService } from '@/services/BranchService';
+import { InMemoryBranchRepository } from '@/repositories/InMemoryBranchRepository';
+import { validateBranchQuery, validateBranchId } from '@/middleware/BranchValidation';
 
 const router = Router();
 
-// GET /api/branches
-router.get('/', getAllBranches);
+/* Setup */
+const repo = new InMemoryBranchRepository();
+const service = new BranchService(repo);
+const controller = new BranchController(service);
+
+// GET /api/branches?city=&page=&limit=
+router.get('/', validateBranchQuery, (req, res) => controller.getBranches(req, res));
 
 // GET /api/branches/:id
-router.get('/:id', getBranchById);
+router.get('/:id', validateBranchId, (req, res) => controller.getBranchById(req, res));
 
 export default router;
