@@ -39,6 +39,8 @@ describe('Branches API', () => {
    */
   it('should return 400 for invalid branch ID', async () => {
     const res = await request(app).get('/api/branches/asdasd');
+    expect(res.body.success).toBe(false);
+    expect(res.body.error).toBe('Branch not found');
     expect(res.status).toBe(404);
   });
 
