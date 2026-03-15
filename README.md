@@ -20,7 +20,7 @@ Project includes formatting and linting configuration to maintain consistent cod
 
 ## Key Libraries
 
-* **Morgan** – HTTP request logging middleware for better visibility during development
+* **Morgan** – HTTP request logging middleware for better visibility.
 * **Zod** – Schema validation library used for validating and parsing request inputs
 * **Nodemon** – Used for development server
 * **ts-node** – Executes TypeScript directly during development
