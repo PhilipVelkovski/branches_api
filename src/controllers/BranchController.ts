@@ -63,8 +63,6 @@ export class BranchController {
       return res.status(404).json({
         success: false,
         error: 'Branch not found',
-        page: 1,
-        limit: 1,
       });
     }
 
