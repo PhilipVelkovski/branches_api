@@ -27,6 +27,11 @@ Project includes formatting and linting configuration to maintain consistent cod
 * **tsconfig-paths** – Enables path aliases defined in `tsconfig.json`
 * **tsc-alias** - Used for production js builds
 * **Prettier + ESLint** – Enforces consistent formatting and code quality
+* **Jest** – Testing framework for running unit.
+
+* **Supertest** – HTTP assertions library used for testing API endpoints.
+
+* **ts-jest** – TypeScript preprocessor for Jest, enabling type-safe tests.
 
 ---
 
@@ -39,6 +44,10 @@ npm install
 npm run build
 ```
 
+## Running tests
+```bash
+npm test
+```
 ## Run development server
 
 ```bash
@@ -57,7 +66,7 @@ http://localhost:3000
 
 GET /api/branches
 
-### Get branch details
+### Get Specific branch
 
 GET /api/branches/:id
 
