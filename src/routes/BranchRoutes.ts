@@ -6,7 +6,7 @@ import { validateBranchQuery, validateBranchId } from '@/middleware/BranchValida
 
 const router = Router();
 
-/* Setup */
+/* Setup Services and repositories for Branches API */
 const repo = new InMemoryBranchRepository();
 const service = new BranchService(repo);
 const controller = new BranchController(service);

@@ -20,7 +20,7 @@ export class BranchService {
    * @param limit - Number of branches per page (default is 10).
    *
    * @returns An object {@link BranchList} containing:
-   *   - data: Array of BranchDTO for the requested page and filter.
+   *   - data: Array of {@link BranchDTO} for the requested page and filter.
    *   - total: Total number of branches matching the filter (before pagination).
    *
    */
@@ -34,7 +34,7 @@ export class BranchService {
    *
    * @param id - The numeric/string ID of the branch to fetch.
    *
-   * @returns {Promise<BranchDTO | undefined>} The branch matching the given ID,
+   * @returns {Promise<{BranchDTO} | undefined>} The branch matching the given ID,
    * or undefined if no branch is found.
    *
    */
