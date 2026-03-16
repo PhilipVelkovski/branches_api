@@ -14,5 +14,5 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules","jest.config.ts"]
+  "exclude": ["node_modules","jest.config.ts","__tests__"]
 }
